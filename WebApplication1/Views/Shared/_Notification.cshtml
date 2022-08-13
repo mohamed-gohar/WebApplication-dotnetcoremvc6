@@ -1,0 +1,32 @@
+﻿@if(TempData["success"]!=null)
+{
+    <style>
+        p.toas {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            background: rgb(167 0 0 / 85%);
+            color: #ffffff;
+            padding: 20px 18px;
+            z-index: 1000;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0.8;
+            transition: all 0.5s ease;
+            user-select: none;
+        }
+        p.toas:hover {
+           background: rgb(167 0 0)
+           
+        }
+    </style>
+    <script src="~/lib/jquery/dist/jquery.min.js" ></script>
+    <script>
+        $(function(){
+            $(".toas").delay(5000).fadeOut(600)
+        })
+    </script>
+    <p class="toas">@TempData["success"]</p>
+}
+
