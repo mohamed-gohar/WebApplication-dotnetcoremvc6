@@ -24,7 +24,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+
         public IActionResult Create(Category obj)
         {
             if (obj.Name == obj.DisplayOrder.ToString())
@@ -60,14 +60,14 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+
         public IActionResult Edit(Category obj)
         {
             if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("DisplayOrder", "The DisplayOrder Can't Exactly Match The Name");
             }
-    
+
             if (ModelState.IsValid)
             {
                 _db.Categories.Update(obj);
